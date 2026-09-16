@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Task</title>
+</head>
+<body>
+    <form>
+    <h1>University Registration Form</h1>
+    <br><br>
+    <p>Please Fill Out the form below to Register</p>
+
+    <hr/>
+
+    <h1>Personal Details</h1>
+
+    <label for="fname">First Name :</label>
+    <input type="text" name="fname" id="fname" placeholder="e.g. Vishesh"/>
+    <br><br>
+
+    <label for="lname">Last Name :</label>
+    <input type="text" name="lname" id="lname" placeholder="e.g. Unadkat" />
+    <br><br>
+
+    <label for="dob">Date Of Birth :</label>
+    <input type="date" name="dob" id="dob"/>
+    <br><br>
+
+    <h3>Gender:</h3>
+    <br>
+    <label for="male">Male</label>
+    <input type="radio" name="gender" id="male" value="male"/>
+    <br><br>
+
+    <label for="female">Female</label>
+    <input type="radio" name="gender" id="female" value="female" />
+    <br><br>
+
+    <label for="other">Other</label>
+    <input type="radio" name="gender" id="other" value="other" />
+    <br><br>
+
+    <h3>Upload Your Photo :</h3>
+    <input tpye="text" name="file"/>
+
+    <hr/>
+
+    <h1>Contact Information</h1>
+
+    <label for="email">Email Address :</label>
+    <input type="email" name="email" id="email"/>
+    <br><br>
+
+    <label for="phone">Phone Number :</label>
+    <input type="tel" name="phone" id="phone"/>
+    
+    <br><br>
+
+    <label for="address">Miling Address :</label>
+    <textarea name="address" id="address" rows="10" cols="30">
+    </textarea>
+    <hr/>
+
+    <h2>Academic Information</h2>
+
+    <label for="course">Select A Course :</label>
+    <select name="course" id="course">
+        <option value="CSE">CSE</option>
+        <option value="ME">ME</option>
+        <option value="CIVIL">CIVIL</option>
+    </select>
+
+    <br>
+
+    <h3>Extracurricular Intrest :</h3>
+
+    <br>
+
+    <label for="sports">sports</label>
+    <input type="checkbox" name="intrest" id="sports" value="sports"/>
+
+    <br><br>
+    
+    <label for="music">Music & Arts</label>
+    <input type="checkbox" name="intrest" id="music" value="music" />
+    
+    <br><br>
+
+    <label for="tech">Technology Clubs</label>
+    <input type="checkbox" name="intrest" id="tech" value="tech" />
+    
+    <br><br>
+
+    <label for="volunter">Volunteering</label>
+    <input type="checkbox" name="intrest" id="volunter" value="volunter" />
+    
+    <hr/>
+
+    <h2>Create Your Account</h2>
+
+    <label for="pass">Create A Password :</label>
+    <input type="password" name="password" id="password" required/>
+
+    <br><br>
+
+    <label for="secure">Security Question: </label>
+    <input type="text" name="secure" id="secure"/>
+
+    <br><br>
+
+    <input type="checkbox" required/>
+    <label>I Agree to the Terms And Conditions.</label>
+
+    <hr/>
+
+    <button type="submit">Submit</button>
+
+    <button type="reset">Reset</button>
+
+
+    </form>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,1393 @@
+/* =========================================================
+   DEVLEARN - COMPLETE CSS PRACTICE PROJECT
+   CSS Concepts:
+   Selectors → Colors → Units → Typography → Box Model
+   → Display → Position → Flexbox → Grid → Forms
+   → Pseudo Classes → Pseudo Elements → Transitions
+   → Transforms → Animations → Variables → Responsive
+   ========================================================= */
+
+
+/* =========================================================
+   1. CSS VARIABLES
+   ========================================================= */
+
+:root {
+
+    /* Colors */
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #0f172a;
+
+    --background-color: #f8fafc;
+    --surface-color: #ffffff;
+
+    --text-color: #1e293b;
+    --muted-text: #64748b;
+
+    --border-color: #e2e8f0;
+
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+
+    /* Typography */
+    --font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Border */
+    --border-radius: 8px;
+
+    /* Shadow */
+    --shadow-sm:
+        0 2px 6px rgba(0, 0, 0, 0.08);
+
+    --shadow-md:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+
+    /* Container */
+    --container-width: 1200px;
+
+}
+
+
+/* =========================================================
+   2. CSS RESET
+   ========================================================= */
+
+/*
+   box-sizing: border-box makes width/height calculations
+   easier and is a common industry practice.
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   Remove default margin.
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   3. BASIC BODY STYLING
+   ========================================================= */
+
+body {
+
+    font-family: var(--font-family);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: var(--text-color);
+
+    background-color: var(--background-color);
+
+}
+
+
+/* =========================================================
+   4. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    line-height: 1.2;
+
+    margin-top: 0;
+
+    color: var(--secondary-color);
+
+}
+
+
+h1 {
+    font-size: 2.5rem;
+}
+
+
+h2 {
+    font-size: 2rem;
+}
+
+
+h3 {
+    font-size: 1.5rem;
+}
+
+
+h4 {
+    font-size: 1.25rem;
+}
+
+
+p {
+    margin-bottom: 1rem;
+}
+
+
+strong {
+    font-weight: 700;
+}
+
+
+em {
+    font-style: italic;
+}
+
+
+small {
+    font-size: 0.875rem;
+}
+
+
+mark {
+
+    background-color: #fef08a;
+
+    padding: 0.1em 0.3em;
+
+}
+
+
+/* =========================================================
+   5. LINKS
+   ========================================================= */
+
+a {
+
+    color: var(--primary-color);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+
+}
+
+
+a:hover {
+
+    color: var(--primary-dark);
+
+    text-decoration: underline;
+
+}
+
+
+a:focus-visible {
+
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+
+    outline-offset: 3px;
+
+}
+
+
+/* =========================================================
+   6. HEADER
+   ========================================================= */
+
+header {
+
+    background-color: var(--secondary-color);
+
+    color: white;
+
+    padding: 1.5rem;
+
+}
+
+/* header:hover{
+    background-color: var(--primary-color);
+    color: black;
+} */
+
+/*
+   Header headings should be white.
+*/
+
+header h1,
+header h2,
+header h3 {
+
+    color: white;
+
+}
+header h1:hover {
+
+    color: var(--primary-color);
+    
+}
+
+
+/* =========================================================
+   7. NAVIGATION
+   ========================================================= */
+
+nav {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+    align-items: center;
+
+}
+
+
+nav a {
+
+    color: white;
+
+    padding: 0.5rem 0.75rem;
+
+    border-radius: var(--border-radius);
+
+}
+
+
+/*
+   Attribute selector.
+*/
+
+nav a[href="index.html"] {
+
+    font-weight: bold;
+
+}
+
+
+/*
+   Pseudo-class.
+*/
+
+nav a:hover {
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: background-color 0.2s ease;
+
+    transition-delay: 0.1s;
+
+}
+
+
+
+/* =========================================================
+   8. MAIN CONTENT
+   ========================================================= */
+
+main {
+
+    width: min(
+        100% - 2rem,
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+
+    padding-block: 3rem;
+
+}
+
+
+/* =========================================================
+   9. SECTION
+   ========================================================= */
+
+section {
+
+    margin-bottom: 3rem;
+
+}
+
+
+section > h2 {
+
+    margin-bottom: 1.25rem;
+
+}
+
+
+/*
+   Descendant selector.
+
+   p inside section
+*/
+
+section p {
+
+    max-width: 75ch;
+
+}
+
+
+/* =========================================================
+   10. HERO SECTION
+   ========================================================= */
+
+/*
+   Since the first section is the hero on index.html.
+*/
+
+main > section:first-child {
+
+    padding: 4rem 2rem;
+
+    background-color: white;
+
+    border-radius: var(--border-radius);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/*
+   Pseudo-element.
+*/
+
+main > section:first-child::before {
+
+    content: "DEVLEARN";
+
+    display: block;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.15em;
+
+    color: var(--primary-color);
+
+    margin-bottom: 1rem;
+
+}
+
+
+/* =========================================================
+   11. BOX MODEL
+   ========================================================= */
+
+/*
+   Every element has:
+
+   Content
+   Padding
+   Border
+   Margin
+
+   Example below demonstrates the box model.
+*/
+
+article {
+
+    background-color: var(--surface-color);
+
+    padding: 1.5rem;
+
+    border: 1px solid var(--border-color);
+
+    margin-bottom: 1rem;
+
+    border-radius: var(--border-radius);
+
+}
+
+
+/*
+   Box shadow.
+*/
+
+article {
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+/* =========================================================
+   12. ARTICLE HOVER
+   ========================================================= */
+
+article {
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+article:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* =========================================================
+   13. LISTS
+   ========================================================= */
+
+ul,
+ol {
+
+    padding-left: 1.5rem;
+
+}
+
+
+li {
+
+    margin-bottom: 0.4rem;
+
+}
+
+
+dl {
+
+    background-color: white;
+
+    padding: 1.5rem;
+
+    border-radius: var(--border-radius);
+
+}
+
+
+dt {
+
+    font-weight: bold;
+
+    color: var(--primary-color);
+
+    margin-top: 1rem;
+
+}
+
+
+dd {
+
+    margin-left: 1.5rem;
+
+    color: var(--muted-text);
+
+}
+
+
+/* =========================================================
+   14. FIGURE / IMAGE
+   ========================================================= */
+
+figure {
+
+    margin: 0 0 2rem;
+
+}
+
+
+figure img {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 100%;
+
+    border-radius: var(--border-radius);
+
+}
+
+
+/*
+   object-fit
+*/
+
+figure img {
+
+    object-fit: cover;
+
+}
+
+
+figcaption {
+
+    margin-top: 0.5rem;
+
+    color: var(--muted-text);
+
+    font-size: 0.9rem;
+
+    color:#1d4ed8
+
+}
+
+
+/* =========================================================
+   15. TABLE
+   ========================================================= */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: white;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+caption {
+
+    padding: 1rem;
+
+    font-size: 1.25rem;
+
+    font-weight: bold;
+
+    text-align: left;
+
+}
+
+
+thead {
+
+    background-color: var(--secondary-color);
+
+    color: white;
+
+}
+
+
+th,
+td {
+
+    padding: 1rem;
+
+    border: 1px solid var(--border-color);
+
+    text-align: left;
+
+}
+
+
+tbody tr:nth-child(even) {
+
+    background-color: #f1f5f9;
+
+}
+
+
+/*
+   Hover table row.
+*/
+
+tbody tr:hover {
+
+    background-color: #e0f2fe;
+
+}
+
+
+/* =========================================================
+   16. BLOCKQUOTE
+   ========================================================= */
+
+blockquote {
+
+    margin: 2rem 0;
+
+    padding: 1.5rem;
+
+    border-left: 5px solid var(--primary-color);
+
+    background-color: white;
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   17. FORM
+   ========================================================= */
+
+form {
+
+    max-width: 800px;
+
+    background-color: white;
+
+    padding: 2rem;
+
+    border-radius: var(--border-radius);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+fieldset {
+
+    border: 1px solid var(--border-color);
+
+    padding: 1.5rem;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: var(--border-radius);
+
+}
+
+
+legend {
+
+    font-weight: bold;
+
+    padding-inline: 0.5rem;
+
+    color: var(--primary-color);
+
+}
+
+
+/* =========================================================
+   18. FORM LABEL
+   ========================================================= */
+
+label {
+
+    display: inline-block;
+
+    margin-bottom: 0.4rem;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   19. FORM INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 0.75rem;
+
+    font: inherit;
+
+    color: var(--text-color);
+
+    background-color: white;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+}
+
+
+/*
+   Vertical resizing only for textarea.
+*/
+
+textarea {
+
+    resize: vertical;
+
+}
+
+
+/* =========================================================
+   20. FORM FOCUS
+   ========================================================= */
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    outline: none;
+
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.15);
+
+}
+
+
+/* =========================================================
+   21. VALIDATION
+   ========================================================= */
+
+input:valid {
+
+    border-color: var(--success-color);
+
+}
+
+
+input:invalid:not(:placeholder-shown) {
+
+    border-color: var(--danger-color);
+
+}
+
+
+/*
+   Required fields.
+*/
+
+input:required,
+textarea:required,
+select:required {
+
+    border-left: 4px solid var(--primary-color);
+
+}
+
+
+/* =========================================================
+   22. CHECKBOX / RADIO
+   ========================================================= */
+
+/*
+   Don't apply width: 100% to checkbox/radio.
+*/
+
+input[type="checkbox"],
+input[type="radio"] {
+
+    width: auto;
+
+    margin-right: 0.4rem;
+
+}
+
+
+/* =========================================================
+   23. BUTTON
+   ========================================================= */
+
+button {
+
+    padding: 0.75rem 1.25rem;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    font: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+button:hover {
+
+    /* background-color: var(--primary-dark); */
+
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    font-size: 1.01rem;
+
+}
+
+
+button:active {
+
+    transform: translateY(0);
+
+}
+
+
+button:focus-visible {
+
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+
+    outline-offset: 3px;
+
+}
+
+
+/* =========================================================
+   24. BUTTON TYPES
+   ========================================================= */
+
+button[type="reset"] {
+
+    background-color: #64748b;
+
+}
+
+
+button[type="reset"]:hover {
+
+    background-color: #475569;
+
+}
+
+
+/* =========================================================
+   25. MEDIA
+   ========================================================= */
+
+video,
+audio,
+iframe {
+
+    max-width: 100%;
+
+}
+
+
+video {
+
+    display: block;
+
+    margin-bottom: 1rem;
+
+}
+
+
+/* =========================================================
+   26. DETAILS / SUMMARY
+   ========================================================= */
+
+details {
+
+    background-color: white;
+
+    padding: 1rem;
+
+    margin-bottom: 1rem;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--border-radius);
+
+}
+
+
+summary {
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    color: var(--primary-color);
+
+}
+
+
+details[open] {
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+/* =========================================================
+   27. PROGRESS
+   ========================================================= */
+
+progress {
+
+    width: 100%;
+
+    height: 1rem;
+
+}
+
+
+/* =========================================================
+   28. METER
+   ========================================================= */
+
+meter {
+
+    width: 100%;
+
+    height: 1.5rem;
+
+}
+
+
+/* =========================================================
+   29. ADDRESS
+   ========================================================= */
+
+address {
+
+    font-style: normal;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   30. FOOTER
+   ========================================================= */
+
+footer {
+
+    background-color: var(--secondary-color);
+
+    color: white;
+
+    padding: 2rem;
+
+    margin-top: 3rem;
+
+    text-align: center;
+
+}
+
+
+footer h2,
+footer h3 {
+
+    color: white;
+
+}
+
+
+footer a {
+
+    color: #bfdbfe;
+
+}
+
+
+footer a:hover {
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   31. FLEXBOX
+   ========================================================= */
+
+/*
+   Navigation is already using Flexbox.
+
+   Important properties demonstrated:
+
+   display
+   flex-direction
+   flex-wrap
+   justify-content
+   align-items
+   gap
+*/
+
+nav {
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+}
+
+
+/* =========================================================
+   32. FLEXBOX CARD LAYOUT
+   ========================================================= */
+
+/*
+   Articles inside a section can form a flexible layout.
+
+   We use :has() so the section containing multiple
+   articles can become a flex container.
+*/
+
+section:has(> article + article) {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1.5rem;
+
+}
+
+
+section:has(> article + article) > h2 {
+
+    flex-basis: 100%;
+
+}
+
+
+section:has(> article + article) > article {
+
+    flex: 1 1 250px;
+
+}
+
+
+/* =========================================================
+   33. CSS GRID
+   ========================================================= */
+
+/*
+   Gallery section can use Grid.
+
+   Grid is useful for two-dimensional layouts.
+*/
+
+main section:has(> figure + figure) {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1.5rem;
+
+}
+
+
+main section:has(> figure + figure) > h2 {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================================
+   34. POSITION
+   ========================================================= */
+
+/*
+   Sticky navigation demonstration.
+
+   Header remains visible while scrolling.
+*/
+
+body > header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+
+
+/*
+   Relative positioning creates a positioning context.
+*/
+
+figure {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   35. OVERFLOW
+   ========================================================= */
+
+table {
+
+    overflow: auto;
+
+}
+
+
+/* =========================================================
+   36. TRANSFORM
+   ========================================================= */
+
+article:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.01);
+
+}
+
+
+/* =========================================================
+   37. PSEUDO ELEMENTS
+   ========================================================= */
+
+h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 50px;
+
+    height: 3px;
+
+    margin-top: 0.5rem;
+
+    background-color: var(--primary-color);
+
+}
+
+
+/* =========================================================
+   38. SELECTION
+   ========================================================= */
+
+::selection {
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   39. RESPONSIVE DESIGN
+   ========================================================= */
+
+/*
+   Tablet
+*/
+
+@media (max-width: 900px) {
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    main {
+        width: min(
+            100% - 1.5rem,
+            var(--container-width)
+        );
+    }
+
+    main section:has(> figure + figure) {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/*
+   Mobile
+*/
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+    }
+
+
+    header {
+
+        padding: 1rem;
+
+    }
+
+
+    header h1 {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    nav {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    nav a {
+
+        text-align: center;
+
+    }
+
+
+    main {
+
+        width: calc(100% - 1rem);
+
+        padding-block: 1.5rem;
+
+    }
+
+
+    main > section:first-child {
+
+        padding: 2rem 1rem;
+
+    }
+
+
+    h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    h2 {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    h3 {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    form {
+
+        padding: 1rem;
+
+    }
+
+
+    table {
+
+        font-size: 0.85rem;
+
+    }
+
+
+    th,
+    td {
+
+        padding: 0.6rem;
+
+    }
+
+
+    main section:has(> figure + figure) {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   40. REDUCED MOTION
+   ========================================================= */
+
+/*
+   Accessibility best practice.
+
+   Some users prefer reduced animation.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
